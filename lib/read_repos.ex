@@ -27,6 +27,7 @@ defmodule ReadRepos do
   defmacro __before_compile__(env) do
     slaves = Module.get_attribute(env.module, :slaves) |> Enum.reverse
     master = Module.get_attribute(env.module, :master)
+    slaves = [master | slaves]
     count = length(slaves)
     quote location: :keep do
       def slaves do

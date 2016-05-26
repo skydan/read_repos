@@ -6,7 +6,7 @@ defmodule ReadRepos.Mixfile do
   def project do
     [app: :read_repos,
      version: @version,
-     elixir: "~> 1.2",
+     elixir: "~> 1.1",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps, 
@@ -33,10 +33,10 @@ defmodule ReadRepos.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :scrivener]]
+    [applications: [:logger]]
   end
 
   defp deps do
-    [{:scrivener, "~> 1.0"}]
+    []
   end
 end

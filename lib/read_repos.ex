@@ -12,7 +12,6 @@ defmodule ReadRepos do
 
       contents = quote location: :keep do
         use Ecto.Repo, otp_app: unquote(@otp_app)
-        use Scrivener, page_size: unquote(@page_size)
       end
 
       env = Application.get_all_env(@otp_app)

@@ -41,7 +41,7 @@ defmodule ReadRepos do
 
       if unquote(count) > 1 do
         def slave do
-          slaves_count  = unquote(Macro.escape(count))
+          slaves_count  = unquote(Macro.escape(count)) - 1
           master_weight = 2
           slave_weight  = 3
           total_weights = master_weight + slaves_count * slave_weight
